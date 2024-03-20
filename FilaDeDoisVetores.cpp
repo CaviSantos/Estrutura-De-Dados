@@ -59,6 +59,7 @@ bool remover(Fila &F){
         F.p = (F.p+1)%10;
       return true;
     }
+    return true;
 }
 int primeiro(Fila &F){
     if(F.p < 4){
