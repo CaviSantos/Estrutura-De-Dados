@@ -3,7 +3,7 @@
 using namespace std;
 
 
-class matriz{
+class Matriz{
     int num_linhas;
     int num_colunas;
     double **M;
@@ -17,32 +17,38 @@ class matriz{
         
         M = new double* [linhas];
         
-        for(int l = 0; l < linhas ; ++l){
+        for(int l = 0; l < linha; l++){
             M[l] = new double [colunas];
         }
-        
     }
     
-    //destrutor
     ~Matriz(){
-        for(int l = 0 ; l<linhas; ++l){
+        for(int l =0; l<num_linhas; l++){
             delete[] M[l];
         }
         delete[] M;
     }
-}
+    
+    double& operator() (int i, int j) {
+        return M[i][j];
+    }
+    
+    int getColuna(){
+        return num_colunas;
+    }
+    int getLinha(){
+        return num_linhas        
+    }
+    
+    
+};
+
 
 
 int main(){
-    try{
-        
-    }
-    catch{
-        
-    }
-
-
-
+   
+   
+    
 
     return 0;
 }
